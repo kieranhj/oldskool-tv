@@ -180,6 +180,7 @@ function watch(id) {
     ["Released", esc(r.release ?? r.year ?? "unknown")],
     ["Platform", `<a href="#/platform/${slug(r.platform)}">${esc(r.platform)}</a>`],
     ["Type", esc(r.kind)],
+    ...(r.expanded.length ? [["Needs", esc(r.expanded.join(", "))]] : []),
     ...r.placings.map((p) => ["Compo", `${ordinal(p.rank)} in ${esc(p.compo)} at ${esc(p.party)}`]),
     ...r.awards.map((a) => ["Award", `${a.status === "winner" ? "Winner" : "Nominee"}: ${esc(a.category)} (${esc(a.event)})`]),
     ...r.credits.map((c) => [esc(c.role), esc(c.who.join(", "))]),
@@ -198,7 +199,7 @@ function watch(id) {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
       <h1 class="wtitle">${esc(r.title)}</h1>
       <div class="wmeta"><span><a href="#/search/${slug(r.by[0] ?? "")}">${byline(r)}</a></span><span>${r.year ?? ""}</span>
-        <span>${esc(r.platform)}</span><span>${esc(r.kind)}</span></div>
+        <span>${esc(r.platform)}</span><span>${esc(r.kind)}</span>${r.expanded.length ? `<span>Needs ${esc(r.expanded.join(", "))}</span>` : ""}</div>
       <div class="actions">
         <button class="btn ${later ? "on" : ""}" id="later"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 10.4 3.5 2.1-.8 1.3L11 13V7h2z"/></svg><span>${later ? "Saved" : "Watch later"}</span></button>
         ${r.emulator && L.demozoo ? `<a class="btn" href="https://demozoo.org/productions/${L.demozoo}/" target="_blank" rel="noopener">Run it in your browser (Demozoo)</a>` : ""}
@@ -251,6 +252,8 @@ function about() {
     <p>Claude wrote each summary from the prod's records: credits, compo results, Demozoo tags and notes and, for the C64, user comments on
     <a href="https://csdb.dk" target="_blank" rel="noopener">CSDb</a>. Quotes are copied exactly from those comments.
     Each write-up says what it was based on. Spot a mistake? The source records are linked from every video page.</p>
+    <p>Topics such as 3D or pixel art were labelled by Claude from Demozoo tags, the write-ups and three stills from each video,
+    so they say what's on screen, not how it's done. Tiny intros are picked out from the prod type.</p>
     <h2>Thanks</h2>
     <p>All the data comes from the people who keep Pouet, Demozoo and CSDb going, and from the sceners who made, voted on and filmed these prods.
     Videos are played from YouTube and belong to their uploaders.</p>

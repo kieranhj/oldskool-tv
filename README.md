@@ -30,6 +30,9 @@ python pipeline/fetch_csdb.py        # CSDb comments for shortlisted C64 prods (
 python pipeline/make_card_inputs.py  # fact sheets for prods without a card -> data/work/card_inputs/
 #   write cards for each batch per pipeline/CARD_SPEC.md -> data/cards/batch_NN.cards.jsonl
 python pipeline/validate_cards.py --merge   # check every batch and merge into data/cards/cards.jsonl
+python pipeline/label_topics.py prepare      # 3 YouTube stills per prod -> data/work/topic_inputs/
+#   label each batch per pipeline/TOPICS.md -> data/cards/topics_NN.jsonl
+python pipeline/label_topics.py check
 python pipeline/export_site.py       # -> site/data/catalog.json, meta.json
 python -m http.server -d site 8642   # then open http://127.0.0.1:8642/
 ```

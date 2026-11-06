@@ -130,60 +130,24 @@
  ],
  "topics": [
   [
-   "Technical showpiece",
-   237
-  ],
-  [
-   "Pixel art & graphics",
-   51
-  ],
-  [
-   "Music first",
-   51
-  ],
-  [
-   "Design & storytelling",
-   44
-  ],
-  [
    "3D & vectors",
-   29
+   85
   ],
   [
-   "Raster & colour tricks",
-   23
+   "2D effects",
+   162
   ],
   [
-   "Tiny intros",
-   22
-  ],
-  [
-   "Scrollers & typography",
-   12
-  ],
-  [
-   "Humour & weirdness",
-   12
-  ],
-  [
-   "Ports & tributes",
-   8
+   "Pixel art",
+   131
   ],
   [
    "Text-mode art",
-   5
+   16
   ],
   [
-   "Video & animation",
-   3
-  ],
-  [
-   "Sprites",
-   3
-  ],
-  [
-   "Border & screen-mode tricks",
-   2
+   "Tiny intros",
+   20
   ]
  ],
  "years": [

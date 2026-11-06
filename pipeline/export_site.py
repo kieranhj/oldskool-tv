@@ -7,6 +7,7 @@ Prods without a card yet are exported with a plain factual fallback so the site 
 """
 import collections, datetime, json
 from common import CACHE, CARDS, SITE_DATA, WORK, read_jsonl
+import label_topics
 
 
 POUET_KIND = {"demo": "Demo", "intro": "Intro", "cracktro": "Cracktro", "invitation": "Invitation",
@@ -37,12 +38,15 @@ def fallback_card(c):
                   if str(p["rank"]).isdigit()), None)
     by = ", ".join(c["authors"]) or "unknown authors"
     return dict(summary=f"{kind(c['types'])} for the {c['family']} by {by}" + (f", {c['year']}" if c["year"] else "")
-                + (f"; {where}." if where else "."), why="", highlights=[], topics=[], quote=None, basis="none")
+                + (f"; {where}." if where else "."), why="", highlights=[], quote=None, basis="none")
 
 
 def main():
     oembed = json.loads((CACHE / "oembed.json").read_text(encoding="utf8"))
     cards = {c["id"]: c for c in read_jsonl(CARDS / "cards.jsonl")} if (CARDS / "cards.jsonl").exists() else {}
+    topics, problems = label_topics.load()
+    if problems:
+        print(f"topic labels: {len(problems)} problems (run label_topics.py check); exporting what there is")
     out = []
     for c in read_jsonl(WORK / "catalog.jsonl"):
         if not c["shortlist"]:
@@ -68,7 +72,8 @@ def main():
             credits=[dict(role=k, who=w) for k, w in credits.items()],
             links=dict(pouet=c["pouet"], demozoo=c["demozoo"], csdb=c["csdb"], zxart=c["zxart"]),
             emulator=bool(c["emulator"]),
-            summary=card["summary"], why=card["why"], highlights=card["highlights"], topics=card["topics"],
+            summary=card["summary"], why=card["why"], highlights=card["highlights"],
+            topics=topics.get(c["id"], {}).get("topics", []), expanded=topics.get(c["id"], {}).get("expanded", []),
             quote=card["quote"], basis=card["basis"],
         ))
     SITE_DATA.mkdir(parents=True, exist_ok=True)
@@ -76,7 +81,8 @@ def main():
     meta = dict(
         generated=datetime.date.today().isoformat(), videos=len(out), cards=sum(r["basis"] != "none" for r in out),
         platforms=collections.Counter(r["platform"] for r in out).most_common(),
-        topics=collections.Counter(t for r in out for t in r["topics"]).most_common(),
+        topics=[(t, n) for t in label_topics.TOPICS.values()
+                if (n := sum(t in r["topics"] for r in out))],
         years=[min(r["year"] for r in out if r["year"]), max(r["year"] for r in out if r["year"])],
     )
     (SITE_DATA / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf8")

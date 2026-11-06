@@ -12,7 +12,6 @@ One JSON object per line, in the same order as the input, written to `data/cards
  "summary": "Booze Design's three-disk-side C64 demo that won the C64 demo compo at X 2008: an unbroken run of parts joined by seamless transitions.",
  "why": "Still the yardstick for C64 demo design. Sceners describe it as growing on them with every watch as they notice how much is happening while it loads.",
  "highlights": ["seamless transitions", "Dane's soundtrack", "no loading pauses"],
- "topics": ["Technical showpiece", "Design & storytelling"],
  "quote": {"text": "Now, after having watched it countless times, I can safely say that I am blown away.", "user": "Stone", "date": "04.01.2012"},
  "basis": "comments"}
 ```
@@ -24,17 +23,14 @@ One JSON object per line, in the same order as the input, written to `data/cards
   notable example of something in the tags or notes.
 - **highlights**: 0–4 short phrases (at most 6 words each) naming specific things on screen or notable about
   it. An empty list is better than guesses.
-- **topics**: 1–3 from this fixed list, exactly as spelled:
-  `Technical showpiece`, `Raster & colour tricks`, `Border & screen-mode tricks`, `3D & vectors`, `Sprites`,
-  `Scrollers & typography`, `Pixel art & graphics`, `Music first`, `Design & storytelling`,
-  `Humour & weirdness`, `Tiny intros`, `Text-mode art`, `Video & animation`, `Ports & tributes`.
-  `Tiny intros` is for size-limited intros of 4K or less.
 - **quote**: `null`, or one excerpt copied **exactly** from a `csdb_comments` entry: a contiguous substring of
   at most 200 characters, with the comment's `user` and `date`. Choose the line that best says why people love
   it. Never a criticism, an in-joke or a reply to another user. No quote when there are no comments, or when
   none is a good one.
 - **basis**: `"comments"` if the card draws on CSDb comments; `"facts"` if only on the fact sheet;
   `"facts+knowledge"` if you also used background knowledge (see below).
+
+Topics are labelled separately, from the video stills as well as the facts: see `TOPICS.md`.
 
 ## Rules
 

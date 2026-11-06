@@ -8,9 +8,6 @@ Exits non-zero if any card fails.
 import json, sys
 from common import CARDS, WORK, read_jsonl
 
-TOPICS = {"Technical showpiece", "Raster & colour tricks", "Border & screen-mode tricks", "3D & vectors", "Sprites",
-          "Scrollers & typography", "Pixel art & graphics", "Music first", "Design & storytelling",
-          "Humour & weirdness", "Tiny intros", "Text-mode art", "Video & animation", "Ports & tributes"}
 HYPE = ("stunning", "mind-blowing", "mindblowing", "legendary", "masterpiece", "!")
 
 
@@ -29,7 +26,7 @@ def check(cards_path):
     for c in cards:
         cid = c.get("id")
         e = lambda m: errors.append(f"{cid}: {m}")
-        for k in ("summary", "why", "highlights", "topics", "quote", "basis"):
+        for k in ("summary", "why", "highlights", "quote", "basis"):
             if k not in c:
                 e(f"missing {k}")
         if len((c.get("summary") or "").split()) > 50:
@@ -38,8 +35,8 @@ def check(cards_path):
             e("why over 45 words")
         if not isinstance(c.get("highlights"), list) or len(c["highlights"]) > 4:
             e("highlights must be a list of at most 4")
-        if not c.get("topics") or len(c["topics"]) > 3 or set(c["topics"]) - TOPICS:
-            e(f"bad topics {c.get('topics')}")
+        if "topics" in c:
+            e("topics belong in data/cards/topics_NN.jsonl (see TOPICS.md), not in the card")
         if c.get("basis") not in ("comments", "facts", "facts+knowledge"):
             e(f"bad basis {c.get('basis')}")
         text = f"{c.get('summary', '')} {c.get('why', '')} {' '.join(c.get('highlights') or [])}"
