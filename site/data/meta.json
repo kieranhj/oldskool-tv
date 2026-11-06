@@ -1,0 +1,193 @@
+{
+ "generated": "2026-11-06",
+ "videos": 300,
+ "cards": 300,
+ "platforms": [
+  [
+   "Commodore 64",
+   95
+  ],
+  [
+   "ZX Spectrum",
+   46
+  ],
+  [
+   "Atari 8-bit",
+   23
+  ],
+  [
+   "Amstrad CPC",
+   21
+  ],
+  [
+   "Atari VCS",
+   13
+  ],
+  [
+   "C16/Plus 4",
+   8
+  ],
+  [
+   "MSX",
+   8
+  ],
+  [
+   "Game Boy",
+   8
+  ],
+  [
+   "VIC-20",
+   7
+  ],
+  [
+   "Atari Lynx",
+   6
+  ],
+  [
+   "NES",
+   5
+  ],
+  [
+   "Vectrex",
+   5
+  ],
+  [
+   "SAM Coupé",
+   5
+  ],
+  [
+   "Oric",
+   5
+  ],
+  [
+   "Apple II",
+   5
+  ],
+  [
+   "Commodore PET",
+   4
+  ],
+  [
+   "BBC Micro",
+   4
+  ],
+  [
+   "ZX81",
+   4
+  ],
+  [
+   "Thomson",
+   4
+  ],
+  [
+   "Sega Master System",
+   3
+  ],
+  [
+   "NEC PC Engine",
+   3
+  ],
+  [
+   "Sharp MZ",
+   3
+  ],
+  [
+   "Atari 7800 ProSystem",
+   3
+  ],
+  [
+   "TRS-80",
+   3
+  ],
+  [
+   "TI-8x (Z80)",
+   2
+  ],
+  [
+   "Spectravideo 3x8",
+   2
+  ],
+  [
+   "Pokemon Mini",
+   1
+  ],
+  [
+   "Enterprise",
+   1
+  ],
+  [
+   "ColecoVision",
+   1
+  ],
+  [
+   "Vector-06C",
+   1
+  ],
+  [
+   "KC 85/Robotron KC 87",
+   1
+  ]
+ ],
+ "topics": [
+  [
+   "Technical showpiece",
+   237
+  ],
+  [
+   "Pixel art & graphics",
+   51
+  ],
+  [
+   "Music first",
+   51
+  ],
+  [
+   "Design & storytelling",
+   44
+  ],
+  [
+   "3D & vectors",
+   29
+  ],
+  [
+   "Raster & colour tricks",
+   23
+  ],
+  [
+   "Tiny intros",
+   22
+  ],
+  [
+   "Scrollers & typography",
+   12
+  ],
+  [
+   "Humour & weirdness",
+   12
+  ],
+  [
+   "Ports & tributes",
+   8
+  ],
+  [
+   "Text-mode art",
+   5
+  ],
+  [
+   "Video & animation",
+   3
+  ],
+  [
+   "Sprites",
+   3
+  ],
+  [
+   "Border & screen-mode tricks",
+   2
+  ]
+ ],
+ "years": [
+  1978,
+  2026
+ ]
+}

@@ -1,0 +1,7 @@
+# Downloaded dumps and intermediate databases (large, rebuilt by pipeline/ingest.py)
+data/raw/
+data/work/
+# Per-request caches (oEmbed, CSDb); rebuildable, but slow to refetch, so kept locally only
+data/cache/
+__pycache__/
+*.pyc
