@@ -2,7 +2,7 @@
 
     python pipeline/make_card_inputs.py [--batch 50]
 
-Writes data/work/card_inputs/batch_NN.jsonl. Prods that already have a card in data/cards/cards.jsonl are skipped,
+Writes data/work/card_inputs/batch_NN.jsonl, numbered on from the last batch that has cards. Prods that already have a card in data/cards/cards.jsonl are skipped,
 so this only produces work for new prods.
 """
 import argparse, json
@@ -39,7 +39,7 @@ def main():
         for cr in c["credits"]:
             credits.setdefault(cr["nick"], []).append(cr["category"] + (f" ({cr['role']})" if cr["role"] else ""))
         sheets.append(dict(
-            id=c["id"], title=c["title"], by=c["authors"], released=c["release"], platform=c["family"],
+            id=c["id"], title=c["title"], by=c["authors"], released=c["release"], platform=c["family"], video=vid,
             platforms=c["platforms"], types=c["types"],
             placings=[f"{p['rank']} in {p['compo']} at {p['party']}"
                       + ("" if str(p["year"]) in p["party"] else f" {p['year']}") for p in c["placings"]],
@@ -54,10 +54,14 @@ def main():
         ))
     out = WORK / "card_inputs"
     out.mkdir(parents=True, exist_ok=True)
+    # Inputs whose cards exist stay (validate_cards.py checks cards against them); the rest are rebuilt, numbered on.
+    have = {int(f.name[6:8]) for f in CARDS.glob("batch_*.cards.jsonl")}
     for f in out.glob("batch_*.jsonl"):
-        f.unlink()
+        if int(f.name[6:8]) not in have:
+            f.unlink()
+    first = max(have, default=0) + 1
     for i in range(0, len(sheets), args.batch):
-        write_jsonl(out / f"batch_{i // args.batch + 1:02}.jsonl", sheets[i:i + args.batch])
+        write_jsonl(out / f"batch_{first + i // args.batch:02}.jsonl", sheets[i:i + args.batch])
     print(f"{len(sheets)} fact sheets in {(len(sheets) + args.batch - 1) // args.batch} batches;"
           f" {sum(bool(s['csdb_comments']) for s in sheets)} with CSDb comments")
 

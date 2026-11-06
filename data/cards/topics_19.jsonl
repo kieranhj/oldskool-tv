@@ -1,0 +1,50 @@
+{"id": "dz374512", "topics": [{"id": "effects", "evidence": ["frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz188682", "topics": [{"id": "effects", "evidence": ["frame:1", "frame:2", "frame:3"]}, {"id": "pixel-art", "evidence": ["frame:1", "frame:3"]}], "expanded": []}
+{"id": "dz98656", "topics": [{"id": "pixel-art", "evidence": ["frame:1", "frame:3"]}], "expanded": []}
+{"id": "dz57069", "topics": [{"id": "effects", "evidence": ["frame:2", "frame:3"]}, {"id": "pixel-art", "evidence": ["frame:1"]}], "expanded": []}
+{"id": "dz48649", "topics": [{"id": "3d", "evidence": ["frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz44397", "topics": [{"id": "pixel-art", "evidence": ["frame:1", "frame:2", "frame:3"]}, {"id": "effects", "evidence": ["comment:Hydrogen 31.10.2012", "comment:Luca 29.10.2012"]}, {"id": "3d", "evidence": ["comment:Jak T Rip 12.11.2012", "comment:PAL 31.10.2012"]}], "expanded": []}
+{"id": "dz174597", "topics": [{"id": "effects", "evidence": ["frame:1", "frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz52004", "topics": [{"id": "pixel-art", "evidence": ["frame:1", "frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz268593", "topics": [{"id": "3d", "evidence": ["frame:2"]}, {"id": "effects", "evidence": ["comment:MCM 07.10.2019", "comment:Pad 07.10.2019"]}, {"id": "pixel-art", "evidence": ["frame:3", "comment:Joe 07.10.2019"]}], "expanded": []}
+{"id": "dz350430", "topics": [{"id": "3d", "evidence": ["frame:2"]}], "expanded": []}
+{"id": "dz7975", "topics": [{"id": "effects", "evidence": ["frame:1", "tag:stellarmode"]}], "expanded": []}
+{"id": "dz288465", "topics": [{"id": "text-mode", "evidence": ["tag:petscii", "tag:petscii-animations", "frame:1", "frame:2", "frame:3", "comment:HCL 01.01.2021"]}], "expanded": []}
+{"id": "dz298737", "topics": [{"id": "pixel-art", "evidence": ["frame:2", "frame:3"]}, {"id": "effects", "evidence": ["frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz390920", "topics": [{"id": "pixel-art", "evidence": ["frame:2"]}, {"id": "effects", "evidence": ["frame:3"]}], "expanded": []}
+{"id": "dz284030", "topics": [{"id": "3d", "evidence": ["comment:Trap 23.09.2020", "comment:Raistlin 20.09.2020", "comment:Dr.Science 20.09.2020"]}, {"id": "effects", "evidence": ["comment:Jammer 20.09.2020", "comment:MCM 20.09.2020"]}, {"id": "pixel-art", "evidence": ["comment:Yogibear 08.10.2020"]}], "expanded": []}
+{"id": "dz271623", "topics": [{"id": "3d", "evidence": ["frame:2"]}, {"id": "pixel-art", "evidence": ["frame:1", "tag:hires"]}], "expanded": ["128K"]}
+{"id": "dz97175", "topics": [{"id": "pixel-art", "evidence": ["frame:1", "frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz289075", "topics": [{"id": "effects", "evidence": ["tag:twister", "frame:1", "frame:2", "frame:3", "comment:icon 16.01.2021"]}], "expanded": []}
+{"id": "dz367925", "topics": [{"id": "effects", "evidence": ["frame:2", "frame:3"]}], "expanded": []}
+{"id": "p93559", "topics": [{"id": "pixel-art", "evidence": ["frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz173149", "topics": [{"id": "effects", "evidence": ["frame:1", "frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz65468", "topics": [{"id": "effects", "evidence": ["frame:1", "frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz156769", "topics": [{"id": "text-mode", "evidence": ["frame:1", "frame:2", "frame:3"]}, {"id": "effects", "evidence": ["frame:1", "frame:2"]}], "expanded": []}
+{"id": "dz39998", "topics": [{"id": "3d", "evidence": ["frame:2"]}, {"id": "pixel-art", "evidence": ["frame:1"]}, {"id": "effects", "evidence": ["frame:3"]}], "expanded": []}
+{"id": "dz288470", "topics": [{"id": "text-mode", "evidence": ["tag:petscii", "frame:2", "comment:Smasher 01.01.2021"]}, {"id": "effects", "evidence": ["comment:Visage 02.01.2021", "comment:Mace 26.04.2021"]}], "expanded": []}
+{"id": "dz24977", "topics": [{"id": "effects", "evidence": ["frame:1", "frame:2", "frame:3", "comment:plagueis 24.05.2009"]}], "expanded": []}
+{"id": "dz180864", "topics": [{"id": "effects", "evidence": ["frame:1", "frame:3"]}, {"id": "pixel-art", "evidence": ["frame:2"]}], "expanded": []}
+{"id": "dz55163", "topics": [{"id": "effects", "evidence": ["tag:mirrors", "comment:Optimus 03.01.2005", "comment:Oswald 30.12.2004", "frame:3"]}], "expanded": []}
+{"id": "dz389990", "topics": [{"id": "effects", "evidence": ["frame:1", "frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz399368", "topics": [{"id": "pixel-art", "evidence": ["notes", "frame:1", "frame:2", "frame:3"]}, {"id": "effects", "evidence": ["frame:1", "frame:2", "frame:3"]}], "expanded": ["Expanded VRAM"]}
+{"id": "dz119995", "topics": [{"id": "effects", "evidence": ["frame:2", "comment:trident 23.09.2006", "comment:Compyx 13.05.2007"]}, {"id": "3d", "evidence": ["comment:Oswald 02.12.2004", "comment:CreaMD 07.10.2006"]}], "expanded": []}
+{"id": "dz93771", "topics": [{"id": "effects", "evidence": ["frame:1", "frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz25815", "topics": [{"id": "pixel-art", "evidence": ["frame:1", "frame:2", "frame:3", "comment:ccr 07.03.2004"]}], "expanded": []}
+{"id": "dz143587", "topics": [{"id": "pixel-art", "evidence": ["frame:1", "frame:3"]}], "expanded": []}
+{"id": "dz62410", "topics": [{"id": "3d", "evidence": ["frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz182988", "topics": [{"id": "effects", "evidence": ["frame:1", "frame:2", "frame:3", "comment:Burglar 23.11.2014"]}], "expanded": []}
+{"id": "dz20332", "topics": [{"id": "pixel-art", "evidence": ["frame:1", "frame:2"]}], "expanded": []}
+{"id": "dz178983", "topics": [{"id": "pixel-art", "evidence": ["frame:2", "frame:3", "comment:iLKke 17.10.2017", "comment:Jammer 01.10.2017"]}, {"id": "effects", "evidence": ["frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz313189", "topics": [{"id": "effects", "evidence": ["frame:1", "frame:2", "frame:3", "comment:LDX#40 18.09.2022"]}], "expanded": []}
+{"id": "dz314310", "topics": [{"id": "3d", "evidence": ["frame:1", "frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz1051", "topics": [], "expanded": []}
+{"id": "dz170410", "topics": [{"id": "pixel-art", "evidence": ["frame:1", "frame:2"]}, {"id": "effects", "evidence": ["frame:3", "comment:Ninja 16.11.2004"]}], "expanded": []}
+{"id": "dz314610", "topics": [{"id": "effects", "evidence": ["frame:1", "frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz290744", "topics": [{"id": "3d", "evidence": ["frame:1", "frame:2", "comment:Sith 20.03.2014"]}, {"id": "effects", "evidence": ["frame:3", "comment:Oswald 24.09.2006"]}], "expanded": []}
+{"id": "dz168718", "topics": [{"id": "text-mode", "evidence": ["comment:abaddon 26.02.2017", "comment:Sith 20.03.2017", "comment:chatGPZ 27.02.2017"]}, {"id": "pixel-art", "evidence": ["frame:2", "frame:3", "comment:xIII 26.02.2017"]}, {"id": "effects", "evidence": ["comment:lft 29.03.2017"]}], "expanded": []}
+{"id": "dz172421", "topics": [{"id": "3d", "evidence": ["frame:1", "frame:2", "frame:3"]}], "expanded": []}
+{"id": "dz195228", "topics": [{"id": "3d", "evidence": ["frame:1", "frame:2", "frame:3", "tag:stniccc-challenge"]}], "expanded": ["VBXE"]}
+{"id": "dz288936", "topics": [{"id": "effects", "evidence": ["frame:1", "frame:2", "frame:3", "comment:Radiant 05.11.2007"]}], "expanded": []}
+{"id": "dz380562", "topics": [{"id": "pixel-art", "evidence": ["frame:1", "frame:3"]}, {"id": "3d", "evidence": ["frame:3"]}, {"id": "effects", "evidence": ["frame:2"]}], "expanded": ["128K"]}
+{"id": "dz184935", "topics": [{"id": "effects", "evidence": ["frame:1", "frame:2", "frame:3"]}, {"id": "text-mode", "evidence": ["frame:3"]}], "expanded": []}

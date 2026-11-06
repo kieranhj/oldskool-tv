@@ -20,7 +20,8 @@ One JSON object per line, in the same order as the input, written to `data/cards
   of prod, and where it competed if it did.
 - **why**: 1–2 sentences, at most 45 words. Why it's worth watching or what its standing in the scene is. With
   comments, say what sceners single out. Without them, lean on facts: compo wins, awards, being an early or
-  notable example of something in the tags or notes.
+  notable example of something in the tags or notes. Don't describe what the video stills show here: they're
+  for highlights and topics, not for why it's rated.
 - **highlights**: 0–4 short phrases (at most 6 words each) naming specific things on screen or notable about
   it. An empty list is better than guesses.
 - **quote**: `null`, or one excerpt copied **exactly** from a `csdb_comments` entry: a contiguous substring of

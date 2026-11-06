@@ -5,7 +5,7 @@
 
 Exits non-zero if any card fails.
 """
-import json, sys
+import json, re, sys
 from common import CARDS, WORK, read_jsonl
 
 HYPE = ("stunning", "mind-blowing", "mindblowing", "legendary", "masterpiece", "!")
@@ -47,6 +47,12 @@ def check(cards_path):
                 part = part.strip()
                 if "!" in part and part:
                     text = text.replace(part, "").replace(part.split(" (")[0], "")
+        text = re.sub(r'"[^"]*"|“[^”]*”', "", text)  # quoted titles, part names and song names may shout
+        names = " ".join([s.get("title", "")] + s.get("by", []) + s.get("credits", []) + s.get("awards", [])
+                         + s.get("placings", []))
+        for word in re.findall(r"\S*!\S*", names):
+            text = text.replace(word, "").replace(word.rstrip("!"), "")
+        text = re.sub(r"\s+!+", "", text) if "!" in s.get("title", "") else text  # "Boink !" written as "Boink!"
         text = text.lower()
         for h in HYPE:
             if h in text:

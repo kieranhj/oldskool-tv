@@ -3,13 +3,13 @@
 The 8-bit demoscene prods worth watching, as videos. Each comes with a short write-up of what it is and why sceners
 rate it, and links back to Pouet, Demozoo and CSDb. Inspired by [HackerTube](https://hackertube.org/about).
 
-Status: **Phase 0 spike.** 300 videos, all with cards, served as a static site. See [FEASIBILITY.md](FEASIBILITY.md)
+Status: **Phase 1.** 1,500 videos, all with cards, served as a static site. See [FEASIBILITY.md](FEASIBILITY.md)
 for the research and the overall plan.
 
 ## Layout
 
 ```
-pipeline/   Python build steps (standard library only)
+pipeline/   Python build steps (standard library, plus `anthropic` for write_with_api.py)
 data/raw    downloaded dumps            (git-ignored)
 data/work   SQLite + intermediate files (git-ignored)
 data/cache  oEmbed and CSDb responses   (git-ignored)
@@ -22,24 +22,24 @@ feasibility/  the one-off scripts from the feasibility study
 
 ```sh
 python pipeline/ingest.py            # download the Pouet + Demozoo dumps, load Demozoo into SQLite (~5 min first time)
-python pipeline/build_catalog.py     # merge, score and pick the shortlist (--size 300)
+python pipeline/build_catalog.py --size 1500   # merge, score and pick the shortlist
 python pipeline/check_videos.py      # oEmbed-check the shortlist's videos
-python pipeline/build_catalog.py     # again, so prods with only dead videos are replaced
+python pipeline/build_catalog.py --size 1500   # again, so prods with only dead videos are replaced
 python pipeline/check_videos.py
 python pipeline/fetch_csdb.py        # CSDb comments for shortlisted C64 prods (1 request/second, cached)
 python pipeline/make_card_inputs.py  # fact sheets for prods without a card -> data/work/card_inputs/
-#   write cards for each batch per pipeline/CARD_SPEC.md -> data/cards/batch_NN.cards.jsonl
-python pipeline/validate_cards.py --merge   # check every batch and merge into data/cards/cards.jsonl
-python pipeline/label_topics.py prepare      # 3 YouTube stills per prod -> data/work/topic_inputs/
-#   label each batch per pipeline/TOPICS.md -> data/cards/topics_NN.jsonl
-python pipeline/label_topics.py check
+python pipeline/write_with_api.py submit     # cards + topics via the Batch API (needs ANTHROPIC_API_KEY, pip install anthropic)
+python pipeline/write_with_api.py collect    # waits, then writes data/cards/batch_NN.cards.jsonl and topics_NN.jsonl
+python pipeline/validate_cards.py --merge    # check every batch and merge into data/cards/cards.jsonl
+python pipeline/label_topics.py check        # check the topic labels
 python pipeline/export_site.py       # -> site/data/catalog.json, meta.json
 python -m http.server -d site 8642   # then open http://127.0.0.1:8642/
 ```
 
-In the spike, Claude Code subagents wrote the cards. `make_card_inputs.py` and `validate_cards.py` treat the
-writer as a black box that reads fact sheets and writes JSONL, so a Batch API script can replace the subagents
-without other changes.
+`write_with_api.py` writes each prod's card and topics in one Claude request, from CARD_SPEC.md, TOPICS.md, the
+fact sheet and YouTube's three stills, at about $0.01 a prod with Opus 5.5 on the Batch API. Prods that already
+have a card are never resubmitted. (The first 300 were written by Claude Code subagents during the spike;
+`label_topics.py prepare` is the input step for that route.)
 
 ## Data sources and credits
 

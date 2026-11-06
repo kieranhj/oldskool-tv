@@ -5,10 +5,15 @@
 Cache: data/cache/csdb/<release id>.xml. Already-cached releases are not refetched.
 parse() turns a cached release into {rating, comments: [{user, date, text}]}.
 """
-import html, time, urllib.request, xml.etree.ElementTree as ET
+import re, html, time, urllib.request, xml.etree.ElementTree as ET
 from common import CACHE, WORK, UA, read_jsonl
 
 DIR = CACHE / "csdb"
+
+
+def fix_cp1252(text):
+    """CSDb serves some comments with Windows-1252 punctuation that arrives as C1 control characters ( for ’)."""
+    return re.sub("[-]", lambda m: bytes([ord(m.group())]).decode("cp1252", errors="ignore"), text)
 
 
 def parse(release_id):
@@ -23,7 +28,7 @@ def parse(release_id):
         for c in grp.findall("UserComment"):
             user = c.find("CSDbUser")
             comments.append(dict(user=(user.findtext("Handle") or user.findtext("Login")) if user is not None else None,
-                                 date=c.findtext("Date"), text=html.unescape(c.findtext("Text") or "").strip()))
+                                 date=c.findtext("Date"), text=fix_cp1252(html.unescape(c.findtext("Text") or "")).strip()))
     return dict(rating=rel.findtext("Rating"), comments=comments)
 
 

@@ -24,6 +24,10 @@ EXPANDED_TAGS = {"reu": "REU", "vbxe": "VBXE", "2sid": "2SID", "zx-spectrum-128k
                  "zx-spectrum-next": "Spectrum Next", "msx2": "MSX2", "1mbit": "1Mbit cart", "bbc-master": "BBC Master",
                  "256k": "256K", "ts-conf": "TS-Conf", "requires-1mb": "1MB RAM",
                  "requires-16k-ram-expansion": "16K RAM expansion", "timex": "Timex"}
+# One spelling per hardware requirement
+HARDWARE_NAMES = {"C64-DTV": "C64 DTV", "Commodore 128": "C128", "ATM Turbo 2": "ATM Turbo", "CBM 8032": "PET 8032",
+                  "PET 8296": "PET 8296", "ZX Spectrum Enhanced": "Enhanced Spectrum", "Expanded VRAM": "Expanded VRAM",
+                  "AY": "AY sound chip"}
 IN = WORK / "topic_inputs"
 FRAMES = CACHE / "frames"
 BATCH = 50
@@ -87,14 +91,18 @@ def prepare():
 
 def load():
     """Final topics per prod: the labeller's, plus tag rules, plus Tiny intros from the type."""
-    inputs = {r["id"]: r for f in sorted(IN.glob("batch_*.jsonl")) for r in read_jsonl(f)}
+    inputs = {}
+    for c in read_jsonl(WORK / "catalog.jsonl"):
+        if c["shortlist"]:
+            inputs[c["id"]] = dict(types=c["types"],
+                                   tag_topics=sorted({TAG_RULES[t] for t in c["tags"] if t in TAG_RULES}),
+                                   tag_expanded=sorted({EXPANDED_TAGS[t] for t in c["tags"] if t in EXPANDED_TAGS}))
     out, errors = {}, []
     for f in sorted(CARDS.glob("topics_*.jsonl")):
         for l in read_jsonl(f):
             r = inputs.get(l.get("id"))
             if not r:
-                errors.append(f"{f.name}: unknown id {l.get('id')}")
-                continue
+                continue  # no longer shortlisted
             ids = [t.get("id") for t in l.get("topics", [])]
             bad = [t for t in ids if t not in TOPICS or t == "tiny"]
             if bad:
@@ -105,7 +113,7 @@ def load():
             if tiny(r["types"]):
                 got.add("tiny")
             out[l["id"]] = dict(topics=[TOPICS[k] for k in TOPICS if k in got],
-                                expanded=sorted(set(l.get("expanded") or []) | set(r["tag_expanded"])))
+                                expanded=sorted({HARDWARE_NAMES.get(x, x) for x in set(l.get("expanded") or []) | set(r["tag_expanded"])}))
     missing = set(inputs) - set(out)
     if missing:
         errors.append(f"{len(missing)} prods unlabelled, e.g. {sorted(missing)[:5]}")

@@ -1,62 +1,86 @@
 {
  "generated": "2026-11-06",
- "videos": 300,
- "cards": 300,
+ "videos": 1500,
+ "cards": 1500,
  "platforms": [
   [
    "Commodore 64",
-   95
+   568
   ],
   [
    "ZX Spectrum",
-   46
+   296
   ],
   [
    "Atari 8-bit",
-   23
+   190
   ],
   [
    "Amstrad CPC",
-   21
+   115
   ],
   [
    "Atari VCS",
-   13
+   65
   ],
   [
    "C16/Plus 4",
-   8
-  ],
-  [
-   "MSX",
-   8
+   37
   ],
   [
    "Game Boy",
-   8
+   31
+  ],
+  [
+   "MSX",
+   23
   ],
   [
    "VIC-20",
-   7
-  ],
-  [
-   "Atari Lynx",
-   6
-  ],
-  [
-   "NES",
-   5
+   22
   ],
   [
    "Vectrex",
-   5
+   19
   ],
   [
-   "SAM Coupé",
-   5
+   "BBC Micro",
+   17
   ],
   [
    "Oric",
+   16
+  ],
+  [
+   "Atari Lynx",
+   14
+  ],
+  [
+   "Commodore PET",
+   13
+  ],
+  [
+   "NES",
+   11
+  ],
+  [
+   "NEC PC Engine",
+   9
+  ],
+  [
+   "Sharp MZ",
+   8
+  ],
+  [
+   "SAM Coupé",
+   7
+  ],
+  [
+   "ZX81",
+   6
+  ],
+  [
+   "Sega Master System",
    5
   ],
   [
@@ -64,44 +88,20 @@
    5
   ],
   [
-   "Commodore PET",
-   4
-  ],
-  [
-   "BBC Micro",
-   4
-  ],
-  [
-   "ZX81",
-   4
-  ],
-  [
    "Thomson",
+   5
+  ],
+  [
+   "TI-8x (Z80)",
    4
   ],
   [
-   "Sega Master System",
-   3
-  ],
-  [
-   "NEC PC Engine",
-   3
-  ],
-  [
-   "Sharp MZ",
-   3
+   "TRS-80",
+   4
   ],
   [
    "Atari 7800 ProSystem",
    3
-  ],
-  [
-   "TRS-80",
-   3
-  ],
-  [
-   "TI-8x (Z80)",
-   2
   ],
   [
    "Spectravideo 3x8",
@@ -131,23 +131,23 @@
  "topics": [
   [
    "3D & vectors",
-   85
+   421
   ],
   [
    "2D effects",
-   162
+   967
   ],
   [
    "Pixel art",
-   131
+   718
   ],
   [
    "Text-mode art",
-   16
+   115
   ],
   [
    "Tiny intros",
-   20
+   242
   ]
  ],
  "years": [
